@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="Chess.ApplicationCore/Chess.ApplicationCore.csproj" />
+  <Project Path="Chess.Console/Chess.Console.csproj" Id="f63e9395-0441-4060-8e31-1fbf193a9650" />
+  <Project Path="Chess.Domain/Chess.Domain.csproj" />
+  <Project Path="Chess.Infrastructure/Chess.Infrastructure.csproj" />
+  <Project Path="Chess.Logic/Chess.Logic.csproj" />
+</Solution>

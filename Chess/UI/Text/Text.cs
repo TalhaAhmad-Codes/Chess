@@ -1,4 +1,4 @@
-﻿using Chess.Shield;
+﻿using Chess.Core.Shield;
 
 namespace Chess.UI.Text
 {
@@ -12,6 +12,7 @@ namespace Chess.UI.Text
             set
             {
                 Guard.AgainstNullOrWhitespace(value, nameof(Text));
+                
                 text = value.Trim();
             }
         }
@@ -20,7 +21,9 @@ namespace Chess.UI.Text
         // Constructors
         public Text(string text, Color? color = null)
         {
-            this.text = text;
+            Guard.AgainstNullOrWhitespace(text, nameof(Text));
+            this.text = text.Trim();
+
             Color = color;
         }
         public Text(Text text)

@@ -1,4 +1,5 @@
-﻿using Chess.UI.Text;
+﻿using Chess.Core.Shield;
+using Chess.UI.Text;
 
 namespace Chess
 {
@@ -6,27 +7,28 @@ namespace Chess
     {
         static void Main(string[] args)
         {
-            // Text example
-            Text text = new(
-                text: "Talha Ahmad",
-                color: new(
-                    fg: ConsoleColor.DarkRed, bg: ConsoleColor.Green
-                )
-            );
+            while (true)
+            {
+                try
+                {
+                    Console.Write("Enter a message: ");
+                    var message = Console.ReadLine();
 
-            text.Display();
-
-            // Message examle
-            //Message message = new(
-            //    header: MessageHeader.INFO,
-            //    message: new(
-            //            text: "This message is for providing information.",
-            //            color: new(fg: ConsoleColor.DarkCyan)
-            //        )
-            //);
-
-            //message.Display(true);
-            Message.Info("This message is for providing information.");
+                    if (message != null)
+                    {
+                        Message.Info(message);
+                        Message.Info($"Length: {message.Trim().Length}");
+                    }
+                }
+                catch (DomainException e)
+                {
+                    Message.Error(e.Message);
+                }
+                finally
+                {
+                    Console.WriteLine();
+                }
+            }
         }
     }
 }

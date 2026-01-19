@@ -1,4 +1,4 @@
-﻿namespace Chess.Shield
+﻿namespace Chess.Core.Shield
 {
     public sealed class DomainException : Exception
     {

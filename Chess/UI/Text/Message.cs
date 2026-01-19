@@ -4,8 +4,15 @@
     {
         public static Text INFO => new(
                 text: "[INFO]", new(
-                        fg: ConsoleColor.DarkBlue,
-                        bg: ConsoleColor.Cyan
+                        fg: ConsoleColor.White,
+                        bg: ConsoleColor.DarkBlue
+                    )
+            );
+
+        public static Text ERROR => new(
+                text: "[ERROR]", new(
+                        fg: ConsoleColor.White,
+                        bg: ConsoleColor.DarkRed
                     )
             );
     }
@@ -22,15 +29,8 @@
         // Method - Print a gap
         private void Gap()
         {
-            // Set BackGround color
-            //if (Header.Color != null && Header.Color.BackgroundColor.HasValue)
-            //    Console.BackgroundColor = Header.Color.BackgroundColor.Value;
-
             // Print gap
             Console.Write(' ');
-
-            // Reset the color
-            //ColorProperty.Reset();
         }
 
         // Method - Display the message
@@ -52,6 +52,19 @@
                     message: new(
                             text: message,
                             color: new(fg: ConsoleColor.DarkCyan)
+                        )
+                );
+
+            msg.Display(true);
+        }
+
+        public static void Error(string message)
+        {
+            Message msg = new(
+                    header: MessageHeader.ERROR,
+                    message: new(
+                            text: message,
+                            color: new(fg: ConsoleColor.Red)
                         )
                 );
 

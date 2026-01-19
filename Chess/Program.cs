@@ -1,5 +1,4 @@
-﻿using Chess.Core.Shield;
-using Chess.UI.Text;
+﻿using Chess.UI.Menu;
 
 namespace Chess
 {
@@ -7,28 +6,33 @@ namespace Chess
     {
         static void Main(string[] args)
         {
-            while (true)
-            {
-                try
-                {
-                    Console.Write("Enter a message: ");
-                    var message = Console.ReadLine();
+            BaseMenu menu = new(
+                header: new(
+                    text: "Main Menu", new(
+                        fg: ConsoleColor.DarkGreen
+                    )
+                ),
+                decorator: new(
+                    value: '=', color: new(
+                        fg: ConsoleColor.DarkYellow
+                    )
+                ),
+                optionInactiveColor: new(
+                    fg: ConsoleColor.DarkCyan
+                ),
+                optionHighlightColor: new(
+                    fg: ConsoleColor.White,
+                    bg: ConsoleColor.DarkCyan
+                )
+            );
 
-                    if (message != null)
-                    {
-                        Message.Info(message);
-                        Message.Info($"Length: {message.Trim().Length}");
-                    }
-                }
-                catch (DomainException e)
-                {
-                    Message.Error(e.Message);
-                }
-                finally
-                {
-                    Console.WriteLine();
-                }
-            }
+            menu.AddOption("Start Game");
+            menu.AddOption("Load Game");
+            menu.AddOption("Options");
+            menu.AddOption("Credits");
+            menu.AddOption("Exit");
+
+            menu.Display();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using Chess.Core.Shield;
 
-namespace Chess.UI.Text
+namespace Chess.UI.Misc
 {
     public class Text
     {
@@ -11,7 +11,7 @@ namespace Chess.UI.Text
             get => text;
             set
             {
-                Guard.AgainstNullOrWhitespace(value, nameof(Text));
+                Guard.AgainstNullOrWhiteSpace(value, nameof(Text));
                 
                 text = value.Trim();
             }
@@ -21,7 +21,7 @@ namespace Chess.UI.Text
         // Constructors
         public Text(string text, Color? color = null)
         {
-            Guard.AgainstNullOrWhitespace(text, nameof(Text));
+            Guard.AgainstNullOrWhiteSpace(text, nameof(Text));
             this.text = text.Trim();
 
             Color = color;

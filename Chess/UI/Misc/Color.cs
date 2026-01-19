@@ -1,4 +1,4 @@
-﻿namespace Chess.UI.Text
+﻿namespace Chess.UI.Misc
 {
     public class Color
     {

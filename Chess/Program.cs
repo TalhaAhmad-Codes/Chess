@@ -15,6 +15,18 @@ namespace Chess
             );
 
             text.Display();
+
+            // Message examle
+            //Message message = new(
+            //    header: MessageHeader.INFO,
+            //    message: new(
+            //            text: "This message is for providing information.",
+            //            color: new(fg: ConsoleColor.DarkCyan)
+            //        )
+            //);
+
+            //message.Display(true);
+            Message.Info("This message is for providing information.");
         }
     }
 }

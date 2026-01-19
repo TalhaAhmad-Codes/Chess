@@ -1,14 +1,22 @@
 ﻿namespace Chess.UI.Text
 {
-    public struct Color
+    public class Color
     {
+        // Properties
         public ConsoleColor ForegroundColor { get; }
         public ConsoleColor? BackgroundColor { get; }
 
-        public Color(ConsoleColor fg, ConsoleColor? bg)
+        // Constructors
+        public Color(ConsoleColor fg, ConsoleColor? bg = null)
         {
             ForegroundColor = fg;
             BackgroundColor = bg;
+        }
+
+        public Color(Color color)
+        {
+            ForegroundColor = color.ForegroundColor;
+            BackgroundColor = color.BackgroundColor;
         }
     }
 

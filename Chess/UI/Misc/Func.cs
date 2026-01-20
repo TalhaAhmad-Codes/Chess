@@ -15,5 +15,10 @@
             for (int i = 0; i < size; i++)
                 Console.Write(' ');
         }
+
+        public static void LineBreak()
+        {
+            Console.WriteLine();
+        }
     }
 }

@@ -42,7 +42,7 @@ namespace Chess.UI.Misc
 
             ColorProperty.Reset();
 
-            if (lineBreak) Console.WriteLine();
+            if (lineBreak) Func.LineBreak();
         }
     }
 }
